@@ -1,0 +1,54 @@
+input = open('d2data.txt').read().split('\n')
+
+data = []
+score = 0
+
+
+for line in input:
+    opp, you = line.split()
+
+    if opp == "A":
+      if you == "X":
+        #you:loseRock
+        score += 3
+        score += 0
+      if you == "Y":
+        #you:drawRock
+        score += 1
+        score += 3
+      if you == "Z":
+        #you:winRock
+        score += 2
+        score += 6
+
+    if opp == "B":
+      if you == "X":
+        #you:losePaper
+        score += 3
+        score += 0
+      if you == "Y":
+        #you:drawPaper
+        score += 1
+        score += 3
+      if you == "Z":
+        #you:winPaper
+        score += 2
+        score += 6
+
+    if opp == "C":
+      if you == "X":
+        #you:loseScissors
+        score += 2
+        score += 0
+      if you == "Y":
+        #you:drawScissors
+        score += 3
+        score += 3
+      if you == "Z":
+        #you:winScissors
+        score += 1
+        score += 6
+
+    print(opp, you, score)
+  
+print(score)
